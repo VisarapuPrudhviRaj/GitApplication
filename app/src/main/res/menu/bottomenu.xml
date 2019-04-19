@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_shop"
+        android:icon="@drawable/ic_shopping_cart_black_24dp"
+        android:title="Shop" />
+    <item
+        android:id="@+id/navigation_basket"
+        android:icon="@drawable/ic_shopping_basket_black_24dp"
+        android:title="Basket" />
+    <item
+        android:id="@+id/navigation_gift"
+        android:icon="@drawable/ic_card_giftcard_black_24dp"
+        android:title="Gift" />
+
+    <item
+        android:id="@+id/navigation_items"
+        android:icon="@drawable/ic_shopping_cart_black_24dp"
+        android:title="Items" />
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="Settings" />
+
+
+</menu>

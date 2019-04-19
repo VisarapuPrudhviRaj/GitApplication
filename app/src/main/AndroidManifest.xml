@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pr.bluefrog.gitapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ServiceActivtiy"></activity>
+        <activity android:name=".bottomnavigationview.retrofit.SampleRetrofitActivity"></activity>
+        <activity android:name=".bottomnavigationview.ItemAddUpdateActivity" />
+        <activity android:name=".bottomnavigationview.InsertActivity" />
+        <activity android:name=".bottomnavigationview.BottomNavActivity" />
+        <activity android:name=".ServiceActivtiy" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,9 +28,13 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".services.MyService"
-            android:enabled="true"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA-r6ALRQWcLEXCsw6VNgFOt_uddNhmsI0" />
 
+        <service
+            android:name=".services.MyService"
+            android:enabled="true" />
     </application>
 
 </manifest>

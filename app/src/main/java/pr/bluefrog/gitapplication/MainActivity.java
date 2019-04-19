@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import pr.bluefrog.gitapplication.bottomnavigationview.BottomNavActivity;
+
 public class MainActivity extends AppCompatActivity implements Receiver.CountValueListner {
 
     Receiver receiver;
@@ -53,5 +55,9 @@ public class MainActivity extends AppCompatActivity implements Receiver.CountVal
 
     public void onClick_Service(View view) {
         startActivity(new Intent(this, ServiceActivtiy.class));
+    }
+
+    public void onClick_BottomNavigation(View view) {
+        startActivity(new Intent(this, BottomNavActivity.class));
     }
 }

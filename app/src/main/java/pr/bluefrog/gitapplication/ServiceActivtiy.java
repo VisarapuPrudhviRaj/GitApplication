@@ -65,15 +65,15 @@ public class ServiceActivtiy extends AppCompatActivity {
         @Override
         public void run() {
 
+
             ((TextView) findViewById(R.id.tv_running_time)).setText(running);
             seekbar.setProgress(Integer.parseInt(model.getDuration()));
-            myHandler.postDelayed(this, 100);
+            myHandler.postDelayed(this, 1000);
         }
     };
 
 
     private void setData(final MediaPlayerModel model, String status) {
-
 
         mins = String.format("%d min, %d sec", TimeUnit.MILLISECONDS.toMinutes(Long.valueOf(model.getDuration())),
                 TimeUnit.MILLISECONDS.toSeconds(Long.valueOf(model.getDuration())) -
@@ -84,10 +84,13 @@ public class ServiceActivtiy extends AppCompatActivity {
                         TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(Long.valueOf(model.getCurrentTime()))));
 
 
+
         if (oneTimeOnly == 0) {
             seekbar.setMax(Integer.parseInt(model.getDuration()));
             oneTimeOnly = 1;
         }
+
+
 
 
         if (status.trim().equals("start")) {
@@ -99,9 +102,9 @@ public class ServiceActivtiy extends AppCompatActivity {
 //            songTimer(Long.valueOf(model.getDuration()));
             ((ImageView) findViewById(R.id.img_start)).setImageResource(android.R.drawable.ic_media_pause);
             seekbar.setProgress(Integer.parseInt(model.getCurrentTime()));
-            myHandler.postDelayed(UpdateSongTime, 100);
+            myHandler.postDelayed(UpdateSongTime, 1000);
 
-        } else {
+        } else if (status.trim().equals("paused")) {
             ((TextView) findViewById(R.id.tv_play_name)).setText(String.valueOf(model.getTrackInfo()));
             ((TextView) findViewById(R.id.tv_play_name)).setVisibility(View.GONE);
             ((TextView) findViewById(R.id.tv_play_duration)).setText(String.valueOf(mins));
